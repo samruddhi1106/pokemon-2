@@ -1,0 +1,932 @@
+question 1 make a form
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style1.css">
+<body>
+    <form>
+        <fieldset>
+            <legend>Personal Info</legend>
+            <div class="form-row">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" required/>
+                <div class="erorr">First name is required</div>
+            </div>
+            <div class="from-group">
+                <label for="lname">Last Name</label>
+                <input type="text"id="lname" required >
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>content Info</legend>
+            <div class="form-row">
+                <div class="from-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                </div>
+                <div class="from-group">
+                    <label for="tel">Phone Number</label>
+                    <input type="phone" id="Phone" required>
+                </div>
+            </div>
+        </fieldset>
+        <button class="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+css
+
+body{
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+form{
+    background-color:#ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px;
+}
+legend{
+    color: rgb(255, 69, 69);
+    text-shadow: 10px 1px 20px;
+    font-weight: bold;
+}
+input{
+    border-radius: 5px;
+    border-width: 1px;
+}
+button{
+    background-color: rgb(244, 120, 120);
+    border-radius: 6px;
+    padding: 6px;
+    margin: 10px 70px;
+}
+button:hover{
+    background-color: green;
+    color: #ffffff;
+}
+
+
+question 2 empty boxes
+html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Scroll Cards</title>
+  <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+
+  <h1 class="main-title">Card Scroll Showcase</h1>
+  <p class="subtitle">Scroll horizontally to view different cards</p>
+
+  <div class="scroll">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+</body>
+</html>
+
+css
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  color: #333;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 15px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.scroll div {
+  flex: none;
+  scroll-snap-align: start;
+  width: 200px;
+  height: 150px;
+  background: #444;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.scroll div:hover {
+  transform: scale(1.05);
+  background: #666;
+}
+
+
+question3 Responsive Hamburger Menu 
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Custom Form Elements</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+    <form id="customForm">  
+        <h2>Registration Form</h2>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="example@mail.com">
+
+        <label for="country">Select Country:</label>
+        <div class="custom-select">
+            <select id="country" name="country" required>
+                <option value="">--Choose a Country--</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="UK">United Kingdom</option>
+                <option value="AU">Australia</option>
+                <option value="IN">India</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="JP">Japan</option>
+                <option value="CN">China</option>
+                <option value="BR">Brazil</option>
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>Skills:</legend>
+            <label><input type="checkbox" id="html" name="skills" value="HTML"> HTML</label>
+            <label><input type="checkbox" id="css" name="skills" value="CSS"> CSS</label>
+            <label><input type="checkbox" id="js" name="skills" value="JavaScript"> JavaScript</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gender:</legend>
+            <label><input type="radio" id="male" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" id="female" name="gender" value="Female"> Female</label>
+            <label><input type="radio" id="other" name="gender" value="Other"> Other</label>
+        </fieldset>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Type your message here..."></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
+
+
+css
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f3;
+    margin: 0;
+    padding: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+fieldset {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+question5 Min and Max Attribute in Inputs
+html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min & Max Input Example</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+    <h1>Min and Max Attribute in Inputs</h1>
+    <p>Fill in the following information:</p>
+
+    <form action="/action_page.php">
+        <label>
+            Enter a date before 1980-01-01:
+            <input type="date" name="datemax" max="1979-12-31">
+        </label><br><br>
+
+        <label>
+            Enter a date after 2000-01-01:
+            <input type="date" name="datemin" min="2000-01-02">
+        </label><br><br>
+
+        <label>
+            Quantity (between 1 to 5):
+            <input type="number" name="quantity" min="1" max="5">
+        </label><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
+
+css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #444;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+
+question6 trafic signal
+html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Simulation</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <h1> Traffic Light Project</h1>
+    <div class="container">
+        <div class="trafficlight">
+            <div class="light red"></div>
+            <div class="light yellow"></div>
+            <div class="light green"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+css
+
+body {
+    background: #f0f4f8;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.trafficlight {
+    background-color: #333;
+    width: 100px;
+    padding: 20px 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    margin: 15px auto;
+    border-radius: 50%;
+    background-color: #555;
+    box-shadow: inset 0 0 10px #000;
+}
+
+.red {
+    background-color: red;
+    animation: redBlink 6s infinite;
+}
+
+.yellow {
+    background-color: #999900;
+    animation: yellowBlink 6s infinite 2s;
+}
+
+.green {
+    background-color: green;
+    animation: greenBlink 6s infinite 4s;
+}
+
+/* Blinking effects */
+@keyframes redBlink {
+    0%, 30% { opacity: 1; }
+    31%, 100% { opacity: 0.3; }
+}
+
+@keyframes yellowBlink {
+    0%, 30% { opacity: 0.3; }
+    31%, 60% { opacity: 1; }
+    61%, 100% { opacity: 0.3; }
+}
+
+@keyframes greenBlink {
+    0%, 60% { opacity: 0.3; }
+    61%, 90% { opacity: 1; }
+    91%, 100% { opacity: 0.3; }
+}
+
+question7 Employee Table
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Table</title>
+    <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+
+    <h1>Company Employee Directory</h1>
+
+    <table>
+        <caption>Employee Information</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>John Doe</td>
+                <td>john.doe@example.com</td>
+                <td>IT</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Jane Smith</td>
+                <td>jane.smith@example.com</td>
+                <td>HR</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Rahul Patel</td>
+                <td>rahul.patel@example.com</td>
+                <td>Finance</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+css
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    margin: 40px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+caption {
+    caption-side: top;
+    padding: 15px;
+    font-size: 1.5em;
+    color: #2c3e50;
+    font-weight: bold;
+    background: linear-gradient(to right, #2980b9, #6dd5fa);
+    color: white;
+}
+
+thead {
+    background-color: #3498db;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e0f7fa;
+    transition: 0.3s;
+}
+
+
+question 8 Vertical Dropdown Menu
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Dropdown Menu</title>
+  <link rel="stylesheet" href="style8.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1>Vertical Dropdown Navigation</h1>
+
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li>
+      <a href="#">Men</a>
+      <ul class="submenu">
+        <li><a href="#">T-Shirts</a></li>
+        <li><a href="#">Shoes</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Women</a>
+      <ul class="submenu">
+        <li><a href="#">Dresses</a></li>
+        <li><a href="#">Handbags</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+</body>
+</html>
+
+css
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 220px;
+  margin: auto;
+  background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease;
+}
+
+.menu > li > a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.submenu {
+  display: none;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.menu li:hover .submenu {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.submenu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.submenu li a:hover {
+  background-color: #eee;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+question9 tab-based interface
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Interface</title>
+  <link rel="stylesheet" href="style9.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1 class="title">Stylish Tab Interface</h1>
+
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab" class="tab" checked>
+    <label for="tab1">Home</label>
+
+    <input type="radio" id="tab2" name="tab" class="tab">
+    <label for="tab2">About</label>
+
+    <input type="radio" id="tab3" name="tab" class="tab">
+    <label for="tab3">Contact</label>
+
+    <div id="c1" class="content">🏠 Welcome to the Home page! Explore our features and latest updates.</div>
+    <div id="c2" class="content">📘 About us: We are passionate developers building beautiful UIs.</div>
+    <div id="c3" class="content">📞 Contact us at: contact@example.com or call +123 456 7890.</div>
+  </div>
+
+</body>
+</html>
+
+css
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
+  text-align: center;
+  padding: 40px;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  max-width: 600px;
+  margin: auto;
+}
+
+.tab {
+  display: none;
+}
+
+label {
+  padding: 12px 20px;
+  background: #ddd;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+input:checked + label {
+  background: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.content {
+  display: none;
+  padding: 20px;
+  background: white;
+  border: 2px solid #4CAF50;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  animation: fade 0.5s ease-in-out;
+}
+
+#tab1:checked ~ #c1,
+#tab2:checked ~ #c2,
+#tab3:checked ~ #c3 {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+question 10 Glass Card with Image 
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glass Card with Image</title>
+  <link rel="stylesheet" href="style10.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=100&q=80" alt="Profile Image">
+    <h2>Alex Morgan</h2>
+    <p>UI/UX Designer</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <button>Contact</button>
+  </div>
+
+</body>
+</html>
+
+css
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  width: 320px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border-radius: 20px;
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.3;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00ffd5;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #00ffd5;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #fff;
+}
